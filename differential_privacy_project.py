@@ -38,7 +38,7 @@ epsilon = 0.5
 privatized_votes_df['Age'] = privatized_votes_df['Age'].apply(Geometric_Mechanism, args=(epsilon,))
 
 # anonymize the data - apply Exponential Hierarchical Mechanism to Location data
-# privatized_votes_df['Location'] = privatized_votes_df['Location'].apply(Exponential_Mechanism, args=(2,cities))
+privatized_votes_df['Location'] = privatized_votes_df['Location'].apply(Exponential_Mechanism, args=(2,cities))
 
 # anonymize the data - remove name and mobile columns
 privatized_votes_df = privatized_votes_df.drop(columns=['Name', 'Mobile'])
